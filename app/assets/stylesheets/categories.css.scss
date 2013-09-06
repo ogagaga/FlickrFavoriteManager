@@ -1,0 +1,52 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#categories {
+  background: url('./lighter_grey.jpg');
+  padding:5px 15px 5px 35px;
+  margin: 0px 0px 10px 0px;
+  /* height: 39px; */
+  text-align: left;
+}
+#categories ul {
+  padding: 5px 0px 0px 0px;
+	margin: 0px;
+}
+#categories ul li {
+	display: inline;
+	margin-right: 1em;
+}
+#categories ul li a {
+	font-family: "Trebuchet MS", sans-serif;
+  text-decoration:underline;
+}
+#categories ul li a:hover{
+	border-bottom: dotted 1px #fff;	
+}
+
+table#category_list {
+  width: 530px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:20px;
+  border: 1px #E3E3E3 solid;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table#category_list th {
+  padding: 5px;
+  border: #E3E3E3 solid;
+  border-width: 0 0 1px 1px;
+  background: #F5F5F5;
+  font-weight: bold;
+  line-height: 120%;
+  text-align: center;
+}
+table#category_list td {
+  padding: 5px;
+  border: 1px #E3E3E3 solid;
+  border-width: 0 0 1px 1px;
+  text-align: center;
+}

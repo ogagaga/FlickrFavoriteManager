@@ -1,0 +1,18 @@
+<div id="image_form" class="common_form">
+<%= form_for(@category) do |f| %>
+  <h1>お気に入り写真を登録する</h1>
+  <p>flickrで気に入った写真を登録してください</p>
+  <% if @category.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+    <ul><% @category.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %></ul>
+  </div>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+</div>

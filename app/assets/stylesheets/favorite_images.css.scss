@@ -1,0 +1,36 @@
+// Place all the styles related to the FavoriteImages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#favorite_images_list {
+   position: relative;
+   z-index: 2;
+   margin: 30px auto;
+   padding: 20px;
+   /* background: rgba(255,255,255,0.4); */
+   background:#eee;
+   -moz-box-shadow: 0 0 20px black;
+   -webkit-box-shadow: 0 0 20px black;
+   box-shadow: 0 0 20px black;
+}
+
+.thumbnail {
+   margin: 20px;
+   border: 1px solid #ddd;
+   padding:5px;
+   background-color:#ffffff;
+   -webkit-box-shadow: 0 10px 8px -6px #8d8c8c;
+   -moz-box-shadow: 0 10px 8px -6px #8d8c8c;
+   box-shadow: 0 10px 8px -6px #8d8c8c;
+}
+
+.thumbnail img {
+   vertical-align: bottom;
+   border-radius: 10px;
+   display: block;
+}
+
+.thumbnail .caption {
+  padding: 9px;
+  width: 300px;
+}

@@ -1,0 +1,38 @@
+<div id="content">
+<%= render "categories/categoriy_images" %>
+
+<p id="notice"><%= notice %></p>
+
+<% if @favorite_image.category %>
+<div id="task_category"><strong>Category:</strong><%= @favorite_image.category.name %></div>
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @favorite_image.title %>
+</p>
+
+<p>
+  <strong>Ownername:</strong>
+  <%= @favorite_image.ownername %>
+</p>
+
+<p>
+  <strong>Flickr user:</strong>
+  <%= @favorite_image.flickr_user_id %>
+</p>
+
+<p>
+  <strong>Url m:</strong>
+  <%= @favorite_image.photo_source_url_n %>
+</p>
+
+<p>
+<img src="<%= @favorite_image.photo_source_url_n %>" alt="<%= @favorite_image.title %>">
+</p>
+
+<div>
+<%= link_to 'Edit', edit_favorite_image_path(@favorite_image) %>
+</div>
+
+</div>

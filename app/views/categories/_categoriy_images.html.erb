@@ -1,0 +1,7 @@
+<div id="categories">
+<ul>
+<% Category.all.each do |c| %>
+  <li><%= link_to c.name, [ c, :favorite_images ] %></li>
+<% end %>
+</ul>
+</div>

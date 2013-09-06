@@ -1,0 +1,28 @@
+<div id="content">
+<h2>カテゴリー毎の写真</h2>
+
+<%= render "categories/categoriy_images" %>
+
+<h2>Favorite Image ALL List</h2>
+<div id="categories">
+<%= link_to 'お気に入り写真を登録する', new_favorite_image_path %>
+</div>
+
+<div id="favorite_images_list">
+  <% @favorite_images.each do |favorite_image| %>
+  <div class="thumbnail">
+    <div><img class="favorite_image" src="<%= favorite_image.photo_source_url_n %>" alt="<%= favorite_image.title %>" width=300></div>
+    <div class="caption">
+    <% if favorite_image.category %>
+      <h5>Category:<%= favorite_image.category.name %></h5>
+    <% end %>
+    <p><%= favorite_image.title %></p>
+    <p><%= favorite_image.ownername %>(<%= favorite_image.flickr_user_id %>)</p>
+    <p><%= link_to 'Show', favorite_image %> | <%= link_to 'Edit', edit_favorite_image_path(favorite_image) %> | <%= link_to 'Destroy', favorite_image, method: :delete, data: { confirm: 'Are you sure?' } %><p/>
+    </div>
+  </div>
+  <% end %>
+
+</div>
+
+</div>

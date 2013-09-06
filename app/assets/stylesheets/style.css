@@ -1,0 +1,218 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  background-color: #FFF;
+  font: 13.34px Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: small;
+  text-align: center;
+}
+
+header {
+  text-align: left;
+  margin: 0 0 5px 0;
+  padding: 0 0 5px 30px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 35px;
+  background: rgba(255,255,255,0.4);
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px black;
+  border: 1px solid #eee;
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 30px;
+  background: rgba(255,255,255,0.4);
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px black;
+  border: 1px solid #eee;
+  padding: 10px 0 0 0;
+  margin: 10px 0 0 0;
+}
+
+h2 {
+  margin: 5px 0 5px 0;
+  padding: 0 0 0 0;
+  text-align: left;
+}
+
+p {
+  margin: 0 0 9px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#lighter {
+  background: url('./lighter_grey.jpg');
+  padding: 0px 15px 0px 30px;
+  margin:0 0 6px 0;
+  /* position: relative; */
+  /* float : right; */
+  text-align: right;
+  display:inline;
+}
+
+#lighter form {
+  width:500px;
+  margin:0 auto;
+  display:inline;
+}
+.search {
+  padding:6px 15px 6px 30px;
+  margin:3px;
+  background: url('./search.png') no-repeat 8px 6px;
+}
+#lighter input[type=submit], #lighter input[type=submit]:hover {
+  position: relative;
+  left: -7px;
+  background:#f5f5f5;
+  padding:6px 10px;
+  font-weight:bold;
+  color:#444;
+  text-decoration:none;
+  border:1px solid #888;
+}
+#lighter input[type=text]{
+  border:1px solid #d0d0d0;
+  background-color:#fcfcfc;
+}
+
+#content{
+  width: 800px;
+  /* height: 100%; */
+	margin:20px auto;
+  /* padding: 0px 20px 0px 20px; */
+  background: rgba(255,255,255,0.4);
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px black;
+  border: 1px solid #eee;
+}
+
+.search_result_title h2 {
+  margin: 10px 10px 0px 10px;
+  padding: 0 0 0 0;
+  text-align: center;
+}
+
+#container {
+  position: relative;
+  z-index: 2;
+  margin: 20px auto;
+  /* padding: 0px 20px 0px 0px; */
+  background:#eee;
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px black;
+}
+
+.item {
+  margin: 20px;
+  border: 1px solid #ddd;
+  padding:5px;
+  background-color:#ffffff;
+  -webkit-box-shadow: 0 10px 8px -6px #8d8c8c;
+  -moz-box-shadow: 0 10px 8px -6px #8d8c8c;
+  box-shadow: 0 10px 8px -6px #8d8c8c;
+}
+
+.item img {
+  vertical-align: bottom;
+  display: block;
+}
+
+.caption {
+  width: 275px;
+}
+
+.common_form {
+  /* margin:0 auto; */
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:20px;
+  width:400px;
+  padding:14px;
+}
+
+#image_form {
+  border: 1px #E3E3E3 solid;
+  background: #F5F5F5;
+}
+
+#image_form h1 {
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+#image_form p {
+  font-size:11px;
+  color:#666666;
+  margin-bottom:20px;
+  border-bottom:solid 1px #b7ddf2;
+  padding-bottom:10px;
+}
+
+#image_form label {
+  /* margin:2px 0 20px 10px; */
+  padding: 5px 0 0 0;
+  display:block;
+  font-weight:bold;
+  text-align:right;
+  width:120px;
+  float:left;
+}
+
+#image_form select {
+  margin:2px 0 20px 10px;
+  padding: 5px 0 0 0;
+  float:left;
+  font-size:12px;
+  padding:4px 2px;
+  border:solid 1px #aacfe4;
+  width:200px;
+}
+
+#image_form input[type="text"] {
+  background-color:lightgray;
+  float:left;
+  font-size:12px;
+  padding:4px 2px;
+  border:solid 1px #aacfe4;
+  width:200px;
+  margin:2px 0 20px 10px;
+}
+
+/* #image_form textarea{ */
+/*   float:left; */
+/*   font-size:12px; */
+/*   padding:4px 2px; */
+/*   border:solid 1px #aacfe4; */
+/*   width:180px; */
+/*   margin:2px 0 20px 10px; */
+/* } */
+
+#image_form input[type="submit"] {
+  clear:both;
+  margin-left:150px;
+  width:125px;
+  height:31px;
+  background:#666666 /* url(img/button.png) no-repeat */;
+  text-align:center;
+  line-height:31px;
+  color:#FFFFFF;
+  font-size:11px;
+  font-weight:bold;
+}

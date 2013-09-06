@@ -1,0 +1,7 @@
+flickr:
+  api_key: 'XXXXX'
+  shared_secret: 'XXXXX'
+  access_token: 'XXXXX'
+  access_secret: 'XXXXX'
+
+
