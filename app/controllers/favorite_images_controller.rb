@@ -88,6 +88,6 @@ class FavoriteImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_image_params
-      params.require(:favorite_image).permit(:title, :ownername, :flickr_user_id, :photo_source_url_n)
+      params.require(:favorite_image).permit(:title, :ownername, :flickr_user_id, :photo_source_url_n, :web_page_url)
     end
 end
