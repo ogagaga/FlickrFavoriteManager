@@ -18,6 +18,7 @@
 /vendor/bundle
 
 .ruby-version
+.rvmrc
 
 /config/database.yml
 
