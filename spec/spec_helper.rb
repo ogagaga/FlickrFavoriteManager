@@ -1,4 +1,4 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
@@ -59,7 +59,7 @@ RSpec.configure do |config|
   # for FactoryGirl Settings
   # FactoryGirl の記述を省略可能にする
   # FactoryGirl.create(:hoge) が create(:hoge) で記述可能
-  config.include FactoryGirl::Syntax::Methods
+  # config.include FactoryGirl::Syntax::Methods
   config.before(:all) do
     FactoryGirl.reload
   end
