@@ -55,6 +55,7 @@ web_page_urls = [
 
 5.times do |n|
   FavoriteImage.create(
+                :category_id => n,
                 :title => titles[n],
                 :ownername => ownernames[n],
                 :flickr_user_id => flickr_user_ids[n],
