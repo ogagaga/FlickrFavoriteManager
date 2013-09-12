@@ -1,7 +1,7 @@
 class CreateFavoriteImages < ActiveRecord::Migration
   def change
     create_table :favorite_images do |t|
-      t.integer :category_id
+      t.integer :category_id, :null => false
       t.string :title
       t.string :ownername
       t.string :flickr_user_id
