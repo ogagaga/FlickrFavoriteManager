@@ -32,7 +32,6 @@ describe FavoriteImage do
       end
       subject { @favorite_image }
       it { should_not be_valid }
-      subject { @favorite_image }
       it { should have(1).errors_on(:title) }
     end
 
@@ -44,7 +43,6 @@ describe FavoriteImage do
       end
       subject { @favorite_image }
       it { should_not be_valid }
-      subject { @favorite_image }
       it { should have(1).errors_on(:ownername) }
     end
 
@@ -56,7 +54,6 @@ describe FavoriteImage do
       end
       subject { @favorite_image }
       it { should_not be_valid }
-      subject { @favorite_image }
       it { should have(1).errors_on(:flickr_user_id) }
     end
 
@@ -68,7 +65,6 @@ describe FavoriteImage do
       end
       subject { @favorite_image }
       it { should_not be_valid }
-      subject { @favorite_image }
       it { should have(1).errors_on(:web_page_url) }
     end
 
@@ -80,10 +76,7 @@ describe FavoriteImage do
       end
       subject { @favorite_image }
       it { should_not be_valid }
-
-      subject { @favorite_image }
       it { should have(1).errors_on(:photo_source_url_n) }
-
     end
 
   end
