@@ -16,14 +16,4 @@ class FavoriteImage < ActiveRecord::Base
 
   validates :category_id, :presence => true
 
-  validate :check_association
-
-  private
-  def check_association
-    if category_id && !Category.where(:id => category_id).exists?
-      errors.add(:base, :missing_category)
-      self.category_id = nil
-    end
-  end
-
 end
