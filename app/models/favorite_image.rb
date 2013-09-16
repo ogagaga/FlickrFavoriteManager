@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 class FavoriteImage < ActiveRecord::Base
   belongs_to :category
+  validates_associated :category
 
   validates :title, :presence => true
   validates :ownername, :presence => true
@@ -12,5 +13,17 @@ class FavoriteImage < ActiveRecord::Base
   }
   # 上記の記述だと複数行のパラメータを受け付けてしまう
   # ^と$は複数行に対応してない
+
+  validates :category_id, :presence => true
+
+  validate :check_association
+
+  private
+  def check_association
+    if category_id && !Category.where(:id => category_id).exists?
+      errors.add(:base, :missing_category)
+      self.category_id = nil
+    end
+  end
 
 end

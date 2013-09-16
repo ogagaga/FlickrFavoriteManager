@@ -42,7 +42,6 @@ class FavoriteImagesController < ApplicationController
   # POST /favorite_images.json
   def create
     @favorite_image = FavoriteImage.new(favorite_image_params)
-    @favorite_image.category_id = params[:category][:category_id]
 
     respond_to do |format|
       if @favorite_image.save
@@ -58,7 +57,6 @@ class FavoriteImagesController < ApplicationController
   # PATCH/PUT /favorite_images/1
   # PATCH/PUT /favorite_images/1.json
   def update
-    @favorite_image.category_id = params[:category][:category_id]
     respond_to do |format|
       if @favorite_image.update(favorite_image_params)
         format.html { redirect_to @favorite_image, notice: 'Favorite image was successfully updated.' }
@@ -88,6 +86,6 @@ class FavoriteImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_image_params
-      params.require(:favorite_image).permit(:title, :ownername, :flickr_user_id, :photo_source_url_n, :web_page_url)
+      params.require(:favorite_image).permit(:category_id, :title, :ownername, :flickr_user_id, :photo_source_url_n, :web_page_url)
     end
 end
