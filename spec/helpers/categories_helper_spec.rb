@@ -11,5 +11,14 @@ require 'spec_helper'
 #   end
 # end
 describe CategoriesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "category options" do
+    before do
+      FactoryGirl.create(:category)
+    end
+
+    subject { helper.category_options }
+    it { should have(2).items }
+
+  end
+
 end
