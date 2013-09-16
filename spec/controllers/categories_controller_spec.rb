@@ -23,7 +23,7 @@ describe CategoriesController do
   # This should return the minimal set of attributes required to create a valid
   # Category. As you add validations to Category, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { FactoryGirl.attributes_for(:category) }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -77,7 +77,7 @@ describe CategoriesController do
 
       it "redirects to the created category" do
         post :create, {:category => valid_attributes}, valid_session
-        response.should redirect_to(Category.last)
+        response.should redirect_to(action: 'index', notice: 'Category was successfully created.')
       end
     end
 
@@ -119,7 +119,7 @@ describe CategoriesController do
       it "redirects to the category" do
         category = Category.create! valid_attributes
         put :update, {:id => category.to_param, :category => valid_attributes}, valid_session
-        response.should redirect_to(category)
+        response.should redirect_to(action: 'index', notice: 'Category was successfully updated.')
       end
     end
 
