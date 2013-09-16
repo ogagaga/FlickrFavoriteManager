@@ -6,7 +6,8 @@ describe "favorite_images/edit" do
       :title => "MyString",
       :ownername => "MyString",
       :flickr_user_id => "MyString",
-      :photo_source_url_n => "MyText"
+      :photo_source_url_n => "MyText",
+      :web_page_url => "MyText"
     ))
   end
 
@@ -18,7 +19,8 @@ describe "favorite_images/edit" do
       assert_select "input#favorite_image_title[name=?]", "favorite_image[title]"
       assert_select "input#favorite_image_ownername[name=?]", "favorite_image[ownername]"
       assert_select "input#favorite_image_flickr_user_id[name=?]", "favorite_image[flickr_user_id]"
-      assert_select "textarea#favorite_image_photo_source_url_n[name=?]", "favorite_image[photo_source_url_n]"
+      assert_select "input#favorite_image_photo_source_url_n[name=?]", "favorite_image[photo_source_url_n]"
+      assert_select "input#favorite_image_web_page_url[name=?]", "favorite_image[web_page_url]"
     end
   end
 end
