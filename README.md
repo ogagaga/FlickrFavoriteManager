@@ -2,6 +2,17 @@
 
 FlickrFavoriteManager is an application to manage your own photo you like in Flickr.
 
+FlickrFavoriteManager はFlickrアカウントがない場合にもお気に入り写真を管理できるアプリケーションです。
+
+## 不足している機能(今後対応する)
+
+- Ajaxで写真登録をする
+- トップページに表示するExplor写真をAjaxで取得する
+- 画像検索処理をAjaxで取得する
+- FlickrAPIの戻り値をキャッシュする
+- iPhone/iPad用のデザインを作成する
+- Flickrの写真URLからお気に入り写真を登録できるようにする
+
 ## Requirements
 
 - Ruby: 2.0.0
