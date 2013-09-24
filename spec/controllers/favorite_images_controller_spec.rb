@@ -66,17 +66,17 @@ describe FavoriteImagesController do
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved favorite_image as @favorite_image" do
-        # Trigger the behavior that occurs when invalid params are submitted
+      before do 
         FavoriteImage.any_instance.stub(:save).and_return(false)
         post :create, {:favorite_image => { "title" => "invalid value" }}, valid_session
+      end
+      it "assigns a newly created but unsaved favorite_image as @favorite_image" do
+        # Trigger the behavior that occurs when invalid params are submitted
         assigns(:favorite_image).should be_a_new(FavoriteImage)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        FavoriteImage.any_instance.stub(:save).and_return(false)
-        post :create, {:favorite_image => { "title" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
