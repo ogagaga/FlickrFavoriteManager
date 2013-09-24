@@ -66,14 +66,13 @@ function _getFlickrPhotos(data){
         var endDiv = '</div>';
         el = itemDiv + itemAnchor + captionDiv + titleDiv + ownerDiv + ownerNameDiv + endDiv;
         addHtml += el;
-
-        // $('#container').append(el);
       });
 
-      // addHtml.css('display', 'none');
+      addHtml = $(addHtml);
+      addHtml.css('display', 'none');
       $container.append(addHtml);
       $container.imagesLoaded(function(){
-        // addHtml.css('display', 'inline');
+        addHtml.css('display', 'inline');
         $container.masonry('appended', addHtml, true);
         $('#read-more').text("もっと読む");
       });
