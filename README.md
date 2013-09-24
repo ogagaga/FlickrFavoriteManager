@@ -8,6 +8,7 @@ FlickrFavoriteManager はFlickrアカウントがない場合にもお気に入�
 
 - Ajaxで写真登録をする
 - トップページに表示するExplor写真をAjaxで取得する
+  (y_ogagaga/toppage_ajax ブランチで開発中)
 - 画像検索処理をAjaxで取得する
 - FlickrAPIの戻り値をキャッシュする
 - iPhone/iPad用のデザインを作成する
