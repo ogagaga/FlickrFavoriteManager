@@ -53,6 +53,7 @@ jQuery(function($){
         var addHtml = "";
         $.each(data.photos.photo, function(i, item){
           var el = '';
+          var itemID = item.id;
           var itemLink = item.url_n;
           var itemTitle = item.title;
           var itemOwner = item.owner;
@@ -61,12 +62,12 @@ jQuery(function($){
           var flickrImgTag = '<img src="' + itemLink + '" alt="' + itemTitle + '">';
           var itemAnchor = '<a href="' + itemLink + '" target="_blank" title="'+  itemTitle + ' by ' + itemOwnerName + ', on Flickr">' + flickrImgTag + '</a>';
           var captionDiv = '<div class="caption">';
-          // var favoriteLink = '<div><a href="/favorite_images/new?favorite_image %5B owner %5D =7504867%40N03&amp;favorite_image %5B ownername %5D =cambiodefractal&amp;favorite_image %5B title %5D =sweet+temptation&amp;favorite_image %5B url %5D =http%3A%2F%2Ffarm6.staticflickr.com%2F5488%2F9894618934_d79c6f1e1e.jpg&amp;type=add">Add Favorite image</a></div>';
+          var favoriteLink = '<div><a href="' + baseURI + 'favorite_images/new?favorite_image%5Bowner%5D=' + itemOwner + '&amp;favorite_image%5Bownername%5D=' + itemOwnerName + '&amp;favorite_image%5Bphoto_source_url_n%5D='+ itemLink + '&amp;favorite_image%5Btitle%5D=' + itemTitle + '&amp;favorite_image%5Bweb_page_url%5D=http%3A%2F%2Fwww.flickr.com%2Fphotos%2F' + itemOwner + '%2F' + itemID + '&amp;type=add">Add Favorite image</a></div>';
           var titleDiv = '<div>' + itemTitle + '</div>';
           var ownerDiv = '<div>' + itemOwner + '</div>';
           var ownerNameDiv = '<div>' + itemOwnerName + ', on Flickr</div></div>';
           var endDiv = '</div>';
-          el = itemDiv + itemAnchor + captionDiv + titleDiv + ownerDiv + ownerNameDiv + endDiv;
+          el = itemDiv + itemAnchor + captionDiv + favoriteLink + titleDiv + ownerDiv + ownerNameDiv + endDiv;
           addHtml += el;
         });
 
@@ -79,58 +80,13 @@ jQuery(function($){
           $('#read-more').text("もっと読む");
         });
       });
-
-
     } else {
       $('#read-more').text("もう画像はありません");
     }
   }
 
+  function _getFlickrPhotosError(){
+  }
+
 });
 
-// function _getFlickrPhotos(data){
-//   var dataStat  = data.stat;
-//   var dataTotal = data.photos.total;
-//   if (dataStat == 'ok') {
-//     var $container = $('#container');
-//     $container.imagesLoaded(function(){
-//       var addHtml = "";
-//       $.each(data.photos.photo, function(i, item){
-//         var el = '';
-//         var itemLink = item.url_n;
-//         var itemTitle = item.title;
-//         var itemOwner = item.owner;
-//         var itemOwnerName = item.ownername;
-//         var itemDiv = '<div id="item" class="item">';
-//         var flickrImgTag = '<img src="' + itemLink + '" alt="' + itemTitle + '">';
-//         var itemAnchor = '<a href="' + itemLink + '" target="_blank" title="'+  itemTitle + ' by ' + itemOwnerName + ', on Flickr">' + flickrImgTag + '</a>';
-//         var captionDiv = '<div class="caption">';
-//         // var domain = date.Base
-//         // var favoriteLink = '<div><a href="/favorite_images/new?favorite_image %5B owner %5D =7504867%40N03&amp;favorite_image %5B ownername %5D =cambiodefractal&amp;favorite_image %5B title %5D =sweet+temptation&amp;favorite_image %5B url %5D =http%3A%2F%2Ffarm6.staticflickr.com%2F5488%2F9894618934_d79c6f1e1e.jpg&amp;type=add">Add Favorite image</a></div>';
-//         var titleDiv = '<div>' + itemTitle + '</div>';
-//         var ownerDiv = '<div>' + itemOwner + '</div>';
-//         var ownerNameDiv = '<div>' + itemOwnerName + ', on Flickr</div></div>';
-//         var endDiv = '</div>';
-//         el = itemDiv + itemAnchor + captionDiv + titleDiv + ownerDiv + ownerNameDiv + endDiv;
-//         addHtml += el;
-//       });
-
-//       addHtml = $(addHtml);
-//       addHtml.css('display', 'none');
-//       $container.append(addHtml);
-//       $container.imagesLoaded(function(){
-//         addHtml.css('display', 'inline');
-//         $container.masonry('appended', addHtml, true);
-//         $('#read-more').text("もっと読む");
-//       });
-//     });
-
-
-//   } else {
-//     $('#read-more').text("もう画像はありません");
-//   }
-// }
-
-
-function _getFlickrPhotosError(){
-}
