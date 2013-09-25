@@ -1,4 +1,6 @@
 jQuery(function($){
+  var baseURI = "";
+  var topPageCount = 1;
 
   $(function(){
     var $container = $('#container');
@@ -21,11 +23,7 @@ jQuery(function($){
 
   });
 
-  var baseURI = "";
-  var nowPage = 1;
-
-  $('#read-more').click(function(){
-    // TODO:onloadでも使いたいのであとで関数化する
+  function _getInterestingnessList(){
     baseURI = this.baseURI;
     $.ajax({
       type : 'GET',
@@ -36,7 +34,7 @@ jQuery(function($){
         api_key : '2d792fd2e749f0930423f8f322060605',
         extras : "owner_name,url_n",
         per_page : '10',
-        page : nowPage
+        page : topPageCount
       },
       dataType : 'jsonp',
       jsonp : 'jsoncallback',
@@ -44,6 +42,14 @@ jQuery(function($){
       success : _getFlickrPhotos,
       error: _getFlickrPhotosError
     });
+  }
+
+  $(function(){
+    _getInterestingnessList();
+  });
+
+  $('#read-more').click(function(){
+    _getInterestingnessList();
   });
 
   function _getFlickrPhotos(data){
@@ -81,7 +87,7 @@ jQuery(function($){
           $container.masonry('appended', addHtml, true);
           $('#read-more').text("もっと読む");
         });
-        nowPage += 1;
+        topPageCount += 1;
       });
     } else {
       $('#read-more').text("もう画像はありません");

@@ -17,24 +17,12 @@
 </div>
 <% end %>
 
-<% unless @interestingness.blank? %>
 <div class="search_result_title">
   <h2>Explor</h2>
 </div>
 <div id="container">
-<% @interestingness.each do |p| %>
-  <div id="item" class="item">
-    <a href="<%= FlickRaw.url_n(p) %>" target="_blank" title="<%= p.title %> by <%= p.ownername %>, on Flickr"> <img src="<%= FlickRaw.url_n(p) %>" alt="<%= p.title %>"></a>
-    <div class="caption">
-      <div><%= link_to 'Add Favorite image', new_favorite_image_path(:type => "add", :favorite_image => { :title => "#{p.title}", :owner => "#{p.owner}", :ownername => "#{p.ownername}", :web_page_url => "#{FlickRaw.url_photopage(p)}", :photo_source_url_n => "#{FlickRaw.url(p)}"}) %></div>
-      <div><%= p.title %></div>
-      <div><%= p.owner %></div>
-      <div>by <%= p.ownername %>, on Flickr</div>
-    </div>
-  </div>
-<% end %>
+  <div id="item" class="item"></div>
 </div>
-<% end %>
 
 <div id="read_more_area" class="alert alert-info">
   <a href="javascript:void(0)" id="read-more">READ MORE</a>
