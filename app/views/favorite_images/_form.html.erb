@@ -13,28 +13,6 @@
 
   <% if Category.all.present? %>
     <%= f.label :categories %>
-<<<<<<< HEAD
-    <%= f.select :category_id, category_options %>
-  <% end %>
-
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :ownername %>
-  <%= f.text_field :ownername %>
-
-  <%= f.label :flickr_user_id %>
-  <%= f.text_field :flickr_user_id %>
-
-  <%= f.label :photo_source_url_n %>
-  <%= f.text_field :photo_source_url_n %>
-
-  <%= f.label :web_page_url %>
-  <%= f.text_field :web_page_url %>
-
-  <%= f.submit 'Create' %>
-
-=======
     <%= f.fields_for :categories do |category| %>
       <%= select( "category", "category_id", Category.all.collect{|c| [ c.name, c.id ] } )%>
     <% end %>
@@ -55,8 +33,7 @@
     <%= f.text_field :web_page_url %>
   
     <%= f.submit 'Create' %>
-  
->>>>>>> eee93951229b6f811acb53cb09e5caf9c7f5077c
+  <% end %>
 <% end %>
 </div>
 

@@ -17,7 +17,7 @@ class TopController < ApplicationController
     @args[:extras] = "owner_name, url_n"
     # the default is street only granularity [16], which most images aren't...
     @args[:accuracy] = 1
-    @args[:per_page] = 100
+    @args[:per_page] = 10
   end
 
 end
