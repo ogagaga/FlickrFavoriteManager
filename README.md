@@ -6,15 +6,15 @@ FlickrFavoriteManager はFlickrアカウントがない場合にもお気に入�
 
 ## 対応予定の不足している機能
 
-- 写真登録のAjax対応
-- FlickrAPIの戻り値をキャッシュする
-- iPhone/iPad用のデザインを作成する
-- Flickrの写真URLからお気に入り写真を登録できるようにする
+* 写真登録のAjax対応
+* FlickrAPIの戻り値をキャッシュする
+* Flickrの写真URLからお気に入り写真を登録できるようにする
+* ユーザー管理機能をつけて複数の人が利用できるようにする(ここができたらHerokuへ公開してみる)
+* iPhone/iPad用のデザインを作成する
 
 ## リファクタリング事項
-- トップページと検索結果のAjax処理を統一させる。
--- トップページはJQueryの$ajax
--- 検索はRailsの機能を利用している
+* トップページと検索結果のAjax処理を統一させる。トップページはJQueryの$ajax、検索はRailsの機能を利用している状態
+* validationのCSSを修正
 
 ## Requirements
 
