@@ -1,10 +1,10 @@
-$("#explor_content").hide();
-$("#search_content").show();
-$("#search_result").html("<%= escape_javascript(render :partial => 'top/search_result' ) %>");
+$("#explor_section").hide();
+$("#search_section").show();
+$("#search_content").html("<%= escape_javascript(render :partial => 'top/search_result' ) %>");
 
-var $search_result = $('#search_result');
-$search_result.imagesLoaded(function(){
-  $('#search_result').masonry({
+var $search_content = $('#search_content');
+$search_content.imagesLoaded(function(){
+  $('#search_content').masonry({
     itemSelector : '.search_item',
     isAnimated: true,
     isFitWidth: true

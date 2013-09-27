@@ -7,25 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header id="header">
-    <h1>FlickrFavoriteManager - Flickrのお気に入り写真を管理する</h1>
-  </header>
-    <div id="categories">
-      <ul>
-        <li><%= link_to 'Top', root_path %> | </li>
-        <li><%= link_to 'Category List', categories_path %> | </li>
-        <li><%= link_to 'Favorite Image ALL List', favorite_images_path, "data-no-turbolink" => true %></li>
-      </lu>
-      <div id="lighter">
-        <%= form_tag("/search/search", method: "get", remote: "true"  ) do %>
-          <%= text_field_tag "q", params[:q], :class => "search square" %>
-          <%= submit_tag "Search" %>
-        <% end %>
+  <div id='wrapper'>
+    <div id='container'>
+      <header id="header"><h1>FlickrFavoriteManager - Flickrのお気に入り写真を管理する</h1></header>
+
+      <div id="nav">
+        <ul>
+          <li><%= link_to 'Top', root_path %> | </li>
+          <li><%= link_to 'Category List', categories_path %> | </li>
+          <li><%= link_to 'Favorite Image ALL List', favorite_images_path, "data-no-turbolink" => true %></li>
+        </lu>
+        <div id="search_area">
+          <%= form_tag("/search/search", method: "get", remote: "true"  ) do %>
+            <%= text_field_tag "q", params[:q], :class => "search square" %>
+            <%= submit_tag "Search" %>
+          <% end %>
+        </div>
       </div>
+
+      <div id="content">
+        <%= yield %>
+      </div>
+
+      <footer id="footer"><p>Copyright © 2013 y_ogagaga All Rights Reserved.</p></footer>
+
     </div>
-
-<%= yield %>
-
-<footer id="footer"><p>Copyright © 2013 y_ogagaga All Rights Reserved.</p></footer>
+  </div>
 </body>
 </html>

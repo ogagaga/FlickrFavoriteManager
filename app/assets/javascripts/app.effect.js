@@ -3,9 +3,9 @@ jQuery(function($){
   var topPageCount = 1;
 
   $(function(){
-    var $container = $('#container');
-    $container.imagesLoaded(function(){
-      $('#container').masonry({
+    var $explor_content = $('#explor_content');
+    $explor_content.imagesLoaded(function(){
+      $('#explor_content').masonry({
         itemSelector : '.item',
         isAnimated: true,
         isFitWidth: true
@@ -56,9 +56,9 @@ jQuery(function($){
     var dataStat  = data.stat;
     var dataTotal = data.photos.total;
     if (dataStat == 'ok') {
-      $("#search_content").hide();
-      var $container = $('#container');
-      $container.imagesLoaded(function(){
+      $("#search_section").hide();
+      var $explor_content = $('#explor_content');
+      $explor_content.imagesLoaded(function(){
         var addHtml = "";
         $.each(data.photos.photo, function(i, item){
           var el = '';
@@ -82,10 +82,10 @@ jQuery(function($){
 
         addHtml = $(addHtml);
         addHtml.css('display', 'none');
-        $container.append(addHtml);
-        $container.imagesLoaded(function(){
+        $explor_content.append(addHtml);
+        $explor_content.imagesLoaded(function(){
           addHtml.css('display', 'inline');
-          $container.masonry('appended', addHtml, true);
+          $explor_content.masonry('appended', addHtml, true);
           $('#read-more').text("もっと読む");
         });
         topPageCount += 1;
