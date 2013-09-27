@@ -56,6 +56,7 @@ jQuery(function($){
     var dataStat  = data.stat;
     var dataTotal = data.photos.total;
     if (dataStat == 'ok') {
+      $("#search_content").hide();
       var $container = $('#container');
       $container.imagesLoaded(function(){
         var addHtml = "";

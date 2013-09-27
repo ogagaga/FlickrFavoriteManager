@@ -137,6 +137,36 @@ p {
   width: 275px;
 }
 
+#search_result {
+  position: relative;
+  z-index: 2;
+  margin: 20px auto;
+  /* padding: 0px 20px 0px 0px; */
+  background:#eee;
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px black;
+}
+
+.search_item {
+  margin: 20px;
+  border: 1px solid #ddd;
+  padding:5px;
+  background-color:#ffffff;
+  -webkit-box-shadow: 0 10px 8px -6px #8d8c8c;
+  -moz-box-shadow: 0 10px 8px -6px #8d8c8c;
+  box-shadow: 0 10px 8px -6px #8d8c8c;
+}
+
+.item img {
+  vertical-align: bottom;
+  display: block;
+}
+
+.caption {
+  width: 275px;
+}
+
 .common_form {
   /* margin:0 auto; */
   margin-left:auto;
