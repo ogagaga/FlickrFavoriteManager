@@ -24,7 +24,7 @@ class SearchController < ApplicationController
     # params[:q].gsub(/[\s　]/, "+")
     # 空白spあると自動でand検索になる。 "-"を付けると除外できる
     @args[:extras] = "owner_name"
-    @args[:per_page] = 50
+    @args[:per_page] = 10
   end
 
 end

@@ -18,7 +18,7 @@
           <li><%= link_to 'Favorite Image ALL List', favorite_images_path, "data-no-turbolink" => true %></li>
         </lu>
         <div id="search_area">
-          <%= form_tag("/search/search", method: "get", remote: "true"  ) do %>
+          <%= form_tag("/search/search", method: "get", remote: "true", :id => "search_form"  ) do %>
             <%= text_field_tag "q", params[:q], :class => "search square" %>
             <%= submit_tag "Search" %>
           <% end %>
