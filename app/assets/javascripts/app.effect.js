@@ -25,7 +25,7 @@ jQuery(function($){
   });
 
   function _getInterestingnessList(){
-    baseURI = this.baseURI;
+    baseURI = this.location.href;
     $.ajax({
       type : 'GET',
       url : 'http://www.flickr.com/services/rest/',
