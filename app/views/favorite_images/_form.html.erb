@@ -16,6 +16,7 @@
     <%= f.fields_for :categories do |category| %>
       <%= select( "category", "category_id", Category.all.collect{|c| [ c.name, c.id ] } )%>
     <% end %>
+  <% end %>
   
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -33,7 +34,6 @@
     <%= f.text_field :web_page_url %>
   
     <%= f.submit 'Create' %>
-  <% end %>
 <% end %>
 </div>
 
