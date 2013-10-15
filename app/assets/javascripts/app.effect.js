@@ -25,7 +25,7 @@ jQuery(function($){
   });
 
   function _getInterestingnessList(){
-    baseURI = this.baseURI;
+    baseURI = this.location.href;
     $.ajax({
       type : 'GET',
       url : 'http://www.flickr.com/services/rest/',
@@ -70,7 +70,7 @@ jQuery(function($){
           var itemOwnerName = item.ownername;
           var itemDiv = '<div id="item" class="item">';
           var flickrImgTag = '<img src="' + itemLink + '" alt="' + itemTitle + '">';
-          var itemAnchor = '<a href="' + itemLink + '" target="_blank" title="'+  itemTitle + ' by ' + itemOwnerName + ', on Flickr">' + flickrImgTag + '</a>';
+          var itemAnchor = '<a href="' + 'http://www.flickr.com/photos/' + itemOwner + '/' + itemID + '" target="_blank" title="'+  itemTitle + ' by ' + itemOwnerName + ', on Flickr">' + flickrImgTag + '</a>';
           var captionDiv = '<div class="caption">';
           var favoriteLink = '<div><a href="' + baseURI + 'favorite_images/new?favorite_image%5Bowner%5D=' + itemOwner + '&amp;favorite_image%5Bownername%5D=' + itemOwnerName + '&amp;favorite_image%5Bphoto_source_url_n%5D='+ itemLink + '&amp;favorite_image%5Btitle%5D=' + itemTitle + '&amp;favorite_image%5Bweb_page_url%5D=http%3A%2F%2Fwww.flickr.com%2Fphotos%2F' + itemOwner + '%2F' + itemID + '&amp;type=add">Add Favorite image</a></div>';
           var titleDiv = '<div>' + itemTitle + '</div>';
@@ -141,7 +141,7 @@ jQuery(function($){
           var itemOwnerName = item.ownername;
           var itemDiv = '<div id="search_item" class="search_item">';
           var flickrImgTag = '<img src="' + itemLink + '" alt="' + itemTitle + '">';
-          var itemAnchor = '<a href="' + itemLink + '" target="_blank" title="'+  itemTitle + ' by ' + itemOwnerName + ', on Flickr">' + flickrImgTag + '</a>';
+          var itemAnchor = '<a href="' + 'http://www.flickr.com/photos/' + itemOwner + '/' + itemID + '" target="_blank" title="'+  itemTitle + ' by ' + itemOwnerName + ', on Flickr">' + flickrImgTag + '</a>';
           var captionDiv = '<div class="caption">';
           var favoriteLink = '<div><a href="' + baseURI + 'favorite_images/new?favorite_image%5Bowner%5D=' + itemOwner + '&amp;favorite_image%5Bownername%5D=' + itemOwnerName + '&amp;favorite_image%5Bphoto_source_url_n%5D='+ itemLink + '&amp;favorite_image%5Btitle%5D=' + itemTitle + '&amp;favorite_image%5Bweb_page_url%5D=http%3A%2F%2Fwww.flickr.com%2Fphotos%2F' + itemOwner + '%2F' + itemID + '&amp;type=add">Add Favorite image</a></div>';
           var titleDiv = '<div>' + itemTitle + '</div>';
